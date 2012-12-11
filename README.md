@@ -9,8 +9,8 @@ A happy side effect we found after creating the plugin was when we keep the code
 
 Master Version: Alpha Release - Status: Functioning
 ==============================
-Change Log:
 ______________________________
+Change Log:
 
 Alpha Release Notes
 -------------------
