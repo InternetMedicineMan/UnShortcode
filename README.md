@@ -3,7 +3,13 @@ UnShortcode
 
 UnShortcode Plugin for WordPress
 
-Current Version: Alpha Release
+Designed as a replacement to the difficult to remember, difficult to use, difficult to visualize shortcodes that are very popular for WordPress. There is a better way. Plugins have access to the CSS Style sheets for the WYSIWYG, this plugin adds button styling and a pop up form to allow additions of the buttons in visual form directly into the WYSIWYG.
+
+A happy side effect we found after creating the plugin was when we keep the code very simple, after you add a button, you can edit the text, the link, the title right inside the WYSIWYG as you can regular text. The only reason you'd need to delete it and re-add the button is to change colors or styling.
+
+Master Version: Alpha Release - Status: Functioning
+==============================
+Change Log:
 ______________________________
 
 Alpha Release Notes
