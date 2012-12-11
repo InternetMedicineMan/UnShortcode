@@ -4,6 +4,7 @@ UnShortcode
 UnShortcode Plugin for WordPress
 
 Current Version: Alpha Release
+______________________________
 
 Alpha Release Notes
 -------------------
