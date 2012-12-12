@@ -7,12 +7,18 @@ Designed as a replacement to the difficult to remember, difficult to use, diffic
 
 A happy side effect we found after creating the plugin was when we keep the code very simple, after you add a button, you can edit the text, the link, the title right inside the WYSIWYG as you can regular text. The only reason you'd need to delete it and re-add the button is to change colors or styling.
 
-Master Version: Alpha Release - Status: Functioning
+Master Version: Alpha Release 0.7
 ==============================
 ______________________________
 Change Log:
 
-Alpha Release Notes
+Alpha 0.7 Release Notes
+-----------------------
+- Fine Tuned buttons display
+- Improved Form Layout
+- Added auto update facilities
+
+Alpha 0.6 Release Notes
 -------------------
 - Initialized File System
 - Created CSS Templates based on Trisha's Designs
