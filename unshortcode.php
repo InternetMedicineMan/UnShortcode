@@ -32,8 +32,10 @@ if(!defined("IS_ADMIN"))
     define("IS_ADMIN",  is_admin());
 
 require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/common.php");
+require_once (WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . '/autoupdate.php');
 
 add_action('init',  array('BMLUnshortcode', 'init'));
+add_action('init',  array('BMLUnshortcode', 'activate_autoupdate'));
 
 class BMLUnshortcode{
 	
@@ -50,7 +52,7 @@ class BMLUnshortcode{
         }
 
 		add_filter( 'mce_css', array('BMLUnshortcode', 'bml_mce_css') );
-		
+				
 	}
 
     // Enqueue plugin style-file
@@ -135,4 +137,12 @@ class BMLUnshortcode{
         <?php
     }
     
+	// Auto Update from BlueMedicince Labs
+	public static function activate_autoupdate()
+	{
+		$plugin_remote_path = 'http://update.bluemedicinelabs.com/update';
+		$plugin_slug = plugin_basename(__FILE__);
+		new BMLupdate (BMLCommon::$version, $plugin_remote_path, $plugin_slug);
+	}
+	
 }
