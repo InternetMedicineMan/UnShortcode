@@ -75,7 +75,7 @@ class BMLUnshortcode{
         if(!$is_post_edit_page)
             return $context;
 
-        $image_btn = BMLCommon::get_base_url() . "/images/form-button.png";
+        $image_btn = BMLCommon::get_base_url() . "/images/form-button.gif";
         $out = '<a href="#TB_inline?width=480&inlineId=select_usc_button" class="thickbox" id="add_uscbutton" title="Add UnShortcode Button"><img src="'.$image_btn.'" alt="Add UnShortcode Button" /></a>';
         return $context . $out;
     }
