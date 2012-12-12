@@ -97,8 +97,25 @@ class BMLUnshortcode{
                 var button_text = jQuery("#button_text").val();
                 var button_link = jQuery("#button_link").val();
                 var button_title = jQuery("#button_title").val();
+                var button_align = jQuery("#button_align").val();
 
-                window.send_to_editor("<a href=\"" + button_link + "\" class=\"uscbutton " + button_color + "\" title=\"" + button_title + "\">" + button_text + "</a>");
+				if (button_align=="center")
+				  {
+				  var pre_button = "<div style='text-align:center;'>";
+				  var post_button = "</div>";
+				  }
+				else if (button_align=="right")
+				  {
+				  var pre_button = "<div style='text-align:right;'>";
+				  var post_button = "</div>";
+				  }
+				else
+				  {
+				  var pre_button = "";
+				  var post_button = "";
+				  }
+
+                window.send_to_editor(pre_button + "<a href=\"" + button_link + "\" class=\"uscbutton " + button_color + "\" title=\"" + button_title + "\">" + button_text + "</a>" + post_button);
             }
         </script>
 	
@@ -119,13 +136,23 @@ class BMLUnshortcode{
                             <option value="black">  Black  </option>
                             <option value="purple">  Purple  </option>
                             <option value="orange">  Orange  </option>
-                        </select></label> <br/>
+                        </select></label>
                     </div>
                     <div style="padding:0 15px 0 15px;">
                         <label for="button_text"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Text</span><input type="text" id="button_text" style="width: 360px;margin-top: 5px;" /></label><br />
                         <label for="button_link"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">URL</span><input type="text" id="button_link" value="http://" style="width: 360px;margin-top: 5px;" /></label><br />
-                        <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Title</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label>
+                        <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Title</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label><br />
+						<label for="button_align"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Align</span><select id="button_align">
+                            <option value="">  Left  </option>
+                            <option value="center">  Center  </option>
+                            <option value="right">  Right  </option>
+                        </select></label>
                     </div>
+					<div style="padding-left:95px;">
+						<p class="howto" style="margin: 3px;">
+							NOTE: Changing alignment may have a different effect that you intend. It's usually best if you are going to use any alignment other than the default left, that you add the button last, and on it's own line. You may experience issues trying to add text after the button if you add the button as the last element on the page.
+						</p>
+					</div>
                     <div style="padding:15px;">
                         <input type="button" class="button-primary" value="Insert Button" onclick="InsertButton();"/>&nbsp;&nbsp;&nbsp;
                     <a class="button" style="color:#bbb;" href="#" onclick="tb_remove(); return false;">Cancel</a>
