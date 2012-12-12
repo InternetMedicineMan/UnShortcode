@@ -76,7 +76,7 @@ class BMLUnshortcode{
             return $context;
 
         $image_btn = BMLCommon::get_base_url() . "/images/form-button.gif";
-        $out = '<a href="#TB_inline?width=480&inlineId=select_usc_button" class="thickbox button" id="add_uscbutton" title="Add UnShortcode Button"><img src="'.$image_btn.'" alt="Add UnShortcode Button" /> UnShortcode</a>';
+        $out = '<a href="#TB_inline?width=480&inlineId=select_usc_button" class="thickbox button" id="add_uscbutton" title="Add UnShortcode Button" style="padding-left: .4em;"><img src="'.$image_btn.'" alt="Add UnShortcode Button" /> UnShortcode</a>';
         return $context . $out;
     }
     
@@ -103,11 +103,10 @@ class BMLUnshortcode{
         <div id="select_usc_button" style="display:none;">
             <div class="wrap">
                 <div>
-                    <div style="padding:15px 15px 0 15px;">
-                        <h3 style="color:#5A5A5A!important; font-family:Georgia,Times New Roman,Times,serif!important; font-size:1.8em!important; font-weight:normal!important;">Insert A Button</h3>
-                        <p class="howto">Choose your Button details below.</p>
+                    <div style="padding:0;">
+                        <p class="howto" style="margin: 3px;">Choose your Button details below.</p>
                     </div>
-                    <div style="padding:15px 15px 0 15px;">
+                    <div style="padding:0 15px 0 15px;">
                         <label for="add_button_color"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Color</span><select id="add_button_color">
                             <option value="">  Select a Color  </option>
                             <option value="blue">  Blue  </option>
@@ -120,7 +119,7 @@ class BMLUnshortcode{
                             <option value="orange">  Orange  </option>
                         </select></label> <br/>
                     </div>
-                    <div style="padding:15px 15px 0 15px;">
+                    <div style="padding:0 15px 0 15px;">
                         <label for="button_text"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Text</span><input type="text" id="button_text" style="width: 360px;margin-top: 5px;" /></label><br />
                         <label for="button_link"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">URL</span><input type="text" id="button_link" value="http://" style="width: 360px;margin-top: 5px;" /></label><br />
                         <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Title</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label>
