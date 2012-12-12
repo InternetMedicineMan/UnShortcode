@@ -76,7 +76,7 @@ class BMLUnshortcode{
             return $context;
 
         $image_btn = BMLCommon::get_base_url() . "/images/form-button.gif";
-        $out = '<a href="#TB_inline?width=480&inlineId=select_usc_button" class="thickbox" id="add_uscbutton" title="Add UnShortcode Button"><img src="'.$image_btn.'" alt="Add UnShortcode Button" /></a>';
+        $out = '<a href="#TB_inline?width=480&inlineId=select_usc_button" class="thickbox button" id="add_uscbutton" title="Add UnShortcode Button"><img src="'.$image_btn.'" alt="Add UnShortcode Button" /> UnShortcode</a>';
         return $context . $out;
     }
     
@@ -99,18 +99,16 @@ class BMLUnshortcode{
                 window.send_to_editor("<a href=\"" + button_link + "\" class=\"uscbutton " + button_color + "\" title=\"" + button_title + "\">" + button_text + "</a>");
             }
         </script>
-
+	
         <div id="select_usc_button" style="display:none;">
             <div class="wrap">
                 <div>
                     <div style="padding:15px 15px 0 15px;">
                         <h3 style="color:#5A5A5A!important; font-family:Georgia,Times New Roman,Times,serif!important; font-size:1.8em!important; font-weight:normal!important;">Insert A Button</h3>
-                        <span>
-                            Choose your Button details below.
-                        </span>
+                        <p class="howto">Choose your Button details below.</p>
                     </div>
                     <div style="padding:15px 15px 0 15px;">
-                        <select id="add_button_color">
+                        <label for="add_button_color"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Color</span><select id="add_button_color">
                             <option value="">  Select a Color  </option>
                             <option value="blue">  Blue  </option>
                             <option value="gray">  Gray  </option>
@@ -120,12 +118,12 @@ class BMLUnshortcode{
                             <option value="black">  Black  </option>
                             <option value="purple">  Purple  </option>
                             <option value="orange">  Orange  </option>
-                        </select> <br/>
+                        </select></label> <br/>
                     </div>
                     <div style="padding:15px 15px 0 15px;">
-                        <label for="button_text">Button Text</label> <input type="text" id="button_text" /><br />
-                        <label for="button_link">Button Link</label> <input type="text" id="button_link" /><br />
-                        <label for="button_title">Button Title</label> <input type="text" id="button_title" />
+                        <label for="button_text"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Text</span><input type="text" id="button_text" style="width: 360px;margin-top: 5px;" /></label><br />
+                        <label for="button_link"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">URL</span><input type="text" id="button_link" value="http://" style="width: 360px;margin-top: 5px;" /></label><br />
+                        <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Title</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label>
                     </div>
                     <div style="padding:15px;">
                         <input type="button" class="button-primary" value="Insert Button" onclick="InsertButton();"/>&nbsp;&nbsp;&nbsp;
