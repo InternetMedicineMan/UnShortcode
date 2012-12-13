@@ -59,10 +59,16 @@
 .uscbutton:focus {
 	outline: none;
 }
+.uscbutton:visited {
+	color:white;
+}
 
 
 /* Grey Button */
 .gray.uscbutton {
+	color: #545050;
+}
+.gray.uscbutton:visited {
 	color: #545050;
 }
 
@@ -189,6 +195,9 @@
 .smoke.uscbutton {
 	color: #807C7C;
 }
+.smoke.uscbutton:visited {
+	color: #807C7C;
+}
 
 .smoke.uscbutton {
 	border: 1px solid #BBBEC1; 
@@ -230,7 +239,9 @@
 .black.uscbutton {
 	color: #EFEBEB;
 }
-
+.black.uscbutton:visited {
+	color: #EFEBEB;
+}
 .black.uscbutton {
 	border: 1px solid #363333;
 	background-color: #090808;

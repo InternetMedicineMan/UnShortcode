@@ -125,7 +125,7 @@ class BMLUnshortcode{
                     <div style="padding:0 15px 0 15px;">
                         <label for="button_text"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Text</span><input type="text" id="button_text" style="width: 360px;margin-top: 5px;" /></label><br />
                         <label for="button_link"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">URL</span><input type="text" id="button_link" value="http://" style="width: 360px;margin-top: 5px;" /></label><br />
-                        <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Title</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label>
+                        <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Tooltip</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label>
                     </div>
                     <div style="padding:15px 15px 15px 100px;">
                         <input type="button" class="button-primary" value="Insert Button" onclick="InsertButton();"/>&nbsp;&nbsp;&nbsp;
