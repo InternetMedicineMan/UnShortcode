@@ -37,6 +37,8 @@ require_once (WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . '/autoupdate.p
 add_action('init',  array('BMLUnshortcode', 'init'));
 add_action('init',  array('BMLUnshortcode', 'activate_autoupdate'));
 
+add_action( 'admin_enqueue_scripts', array('BMLUnshortcode','wp_pointer'));
+
 class BMLUnshortcode{
 	
 	//Plugin starting point. Will load appropriate files
@@ -137,7 +139,48 @@ class BMLUnshortcode{
 
         <?php
     }
-    
+
+	public static function wp_pointer( $hook_suffix ) {
+		$enqueue = FALSE;
+		set_user_setting( 'bmlusc1', 0 );
+		$admin_bar = get_user_setting( 'bmlusc1', 0 ); // check settings on user
+		// check if admin bar is active and default filter for wp pointer is true
+		if ( ! $admin_bar && apply_filters( 'show_wp_pointer_admin_bar', TRUE ) ) {
+			$enqueue = TRUE;
+			add_action( 'admin_print_footer_scripts', array('BMLUnshortcode','content_pointer') );
+		}
+		// in true, include the scripts
+		if ( $enqueue ) {
+			wp_enqueue_style( 'wp-pointer' );
+			wp_enqueue_script( 'wp-pointer' );
+			wp_enqueue_script( 'utils' ); // for user settings
+		}
+	}
+	
+	public static function content_pointer() {
+		$pointer_content  = '<h3>' . 'UnShortcode Discount' . '</h3>';
+		$pointer_content .= '<p>' . 'Trisha, you can save on the Premium version of UnShortcode today! Find out more information on our website.<br /><br /><a href="#" class="button-primary">Learn more about UnShortcode Pro</button>' . '</p>';
+	?>
+	<script type="text/javascript">
+	//<![CDATA[
+	jQuery(document).ready( function($) {
+		$( '#wpadminbar' ).pointer({
+			content: '<?php echo $pointer_content; ?>',
+			position: {
+				my: 'left top',
+				at: 'center bottom',
+				offset: '-25 0'
+			},
+			close: function() {
+				setUserSetting( 'bmlusc1', '1' );
+			}
+		}).pointer('open');
+	});
+	//]]>
+	</script>
+	<?php
+	}
+
 	// Auto Update from BlueMedicince Labs
 	public static function activate_autoupdate()
 	{
