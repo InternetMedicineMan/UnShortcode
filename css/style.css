@@ -5,14 +5,14 @@
 	font-weight:bold;
 	font-size:16px;
 	color: #FFF;
-	white-space:nowrap;
 }
 
 .uscbutton {
 	display: inline-block;
+	line-height:1.3em;
 	margin: 10px 20px 20px 0;
 	padding: 11px 32px;
-	border: solid 1px #024f70; 
+	border: solid 1px #024f70;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px; 
 	border-radius: 5px; 
