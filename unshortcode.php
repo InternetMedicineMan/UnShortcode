@@ -3,7 +3,7 @@
 Plugin Name: UnShortcode Plugin
 Plugin URI: http://www.BlueMedicineLabs.com
 Description: Easily create buttons without shortcode that you can see in the admin
-Version: 0.7
+Version: 0.8.3
 Author: BlueMedicine Labs
 Author URI: http://www.BlueMedicineLabs.com
 
@@ -51,7 +51,7 @@ class BMLUnshortcode{
             add_action('admin_footer',  array('BMLUnshortcode', 'add_mce_popup'));
         }
 
-		add_filter( 'mce_css', array('BMLUnshortcode', 'bml_mce_css') );
+		add_filter( 'mce_css', array('BMLUnshortcode', 'bml_mce_css'), 999 );
 				
 	}
 

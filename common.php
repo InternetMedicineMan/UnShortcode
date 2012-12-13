@@ -1,7 +1,7 @@
 <?php
 class BMLCommon{
 	
-	public static $version = "0.8";
+	public static $version = "0.8.3";
 
 	//Returns the url of the plugin's root folder
     public static function get_base_url(){
