@@ -96,10 +96,9 @@ class BMLUnshortcode{
 
                 var button_text = jQuery("#button_text").val();
                 var button_link = jQuery("#button_link").val();
-                var button_title = jQuery("#button_title").val();
                 var button_align = jQuery("#button_align").val();
 
-                window.send_to_editor("<a href=\"" + button_link + "\" class=\"uscbutton " + button_color + "\" title=\"" + button_title + "\">" + button_text + "</a>&nbsp;");
+                window.send_to_editor("<a href=\"" + button_link + "\" class=\"uscbutton " + button_color + "\">" + button_text + "</a>&nbsp;");
             }
         </script>
 	
@@ -120,12 +119,13 @@ class BMLUnshortcode{
                             <option value="black">  Black  </option>
                             <option value="purple">  Purple  </option>
                             <option value="orange">  Orange  </option>
+                            <option value="pink">  Pink  </option>
+                            <option value="yellow">  Yellow  </option>
                         </select></label>
                     </div>
                     <div style="padding:0 15px 0 15px;">
                         <label for="button_text"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Text</span><input type="text" id="button_text" style="width: 360px;margin-top: 5px;" /></label><br />
                         <label for="button_link"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">URL</span><input type="text" id="button_link" value="http://" style="width: 360px;margin-top: 5px;" /></label><br />
-                        <label for="button_title"><span style="display:inline-block;width: 80px;text-align: right;padding-right: 5px;">Tooltip</span><input type="text" id="button_title" style="width: 360px;margin-top: 5px;" /></label>
                     </div>
                     <div style="padding:15px 15px 15px 100px;">
                         <input type="button" class="button-primary" value="Insert Button" onclick="InsertButton();"/>&nbsp;&nbsp;&nbsp;
